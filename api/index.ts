@@ -2,8 +2,10 @@ import mongoose from 'mongoose';
 import express from 'express';
 import linksRouter from "./routers/links";
 import shortUrl from "./routers/shortUrl";
+import cors = require("cors");
 
 const app = express();
+app.use(cors());
 const port = 8000;
 app.use(express.json());
 app.use('/links', linksRouter);
