@@ -23,7 +23,7 @@ const Form = () => {
 			const response = await axiosApi.post('/links', post);
 			if (response) {
 				await setPosting(prev => ({...prev, shortUrl: response.data.shortUrl}));
-				await setPost(prev => ({...prev, url = ''}))
+				await setPost(prev => ({...prev, url: ''}))
 			}
 		} finally {
 			await setPosting(prev => ({...prev, postingNow: false}))
